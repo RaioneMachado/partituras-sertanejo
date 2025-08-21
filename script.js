@@ -314,3 +314,54 @@ function otimizarMobile() {
 // Executar ao carregar e redimensionar
 document.addEventListener('DOMContentLoaded', otimizarMobile);
 window.addEventListener('resize', otimizarMobile);
+
+// Adicione este script para funcionalidades extras do botão flutuante
+document.addEventListener('DOMContentLoaded', function() {
+    const floatButton = document.querySelector('.whatsapp-float-button');
+    const notificationBubble = document.querySelector('.notification-bubble');
+    
+    // Efeito de digitação no balão de notificação
+    function typeWriterEffect() {
+        const text = "🎵 Oferta especial!";
+        let i = 0;
+        notificationBubble.innerHTML = '';
+        
+        function type() {
+            if (i < text.length) {
+                notificationBubble.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, 100);
+            }
+        }
+        type();
+    }
+    
+    // Iniciar efeito de digitação após 2 segundos
+    setTimeout(typeWriterEffect, 2000);
+    
+    // Contador de cliques (para analytics)
+    floatButton.addEventListener('click', function() {
+        console.log('Botão do WhatsApp clicado - Redirecionando para Mateus');
+        // Aqui você pode adicionar Google Analytics ou outro tracking
+    });
+    
+    // Esconder balão após 10 segundos
+    setTimeout(() => {
+        notificationBubble.style.opacity = '0';
+        notificationBubble.style.transform = 'scale(0.8)';
+        setTimeout(() => {
+            notificationBubble.style.display = 'none';
+        }, 300);
+    }, 10000);
+    
+    // Mostrar balão ao passar o mouse no botão principal
+    floatButton.addEventListener('mouseenter', () => {
+        if (notificationBubble.style.display === 'none') {
+            notificationBubble.style.display = 'block';
+            setTimeout(() => {
+                notificationBubble.style.opacity = '1';
+                notificationBubble.style.transform = 'scale(1)';
+            }, 10);
+        }
+    });
+});
