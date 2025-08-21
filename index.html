@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTAS E LOUVORES | 30 Partituras + Playbacks dos Louvores Mais Tocados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="light-effect"></div>
+    <div class="light-effect light-effect-2"></div>
+    <div class="particles-container" id="particles-js"></div>
+    
+    <!-- Modal de Oferta Especial -->
+    <div class="modal-overlay" id="modalOferta">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>OFERTA ESPECIAL!</h2>
+                <span class="modal-close" onclick="fecharModal()">&times;</span>
+            </div>
+            <div class="modal-content">
+                <p>Última chance! <strong>40% OFF</strong> nas partituras + playbacks</p>
+                <div class="modal-timer">
+                    <span>Esta oferta expira em:</span>
+                    <div class="countdown-modal">
+                        <div class="countdown-item-modal">
+                            <span id="modal-hours">00</span>
+                            <span>Horas</span>
+                        </div>
+                        <div class="countdown-item-modal">
+                            <span id="modal-minutes">00</span>
+                            <span>Minutos</span>
+                        </div>
+                        <div class="countdown-item-modal">
+                            <span id="modal-seconds">00</span>
+                            <span>Segundos</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="#instrument-grid" class="modal-btn">VER OFERTAS AGORA</a>
+            </div>
+        </div>
+    </div>
+
+<header>
+    <div class="header-section">
+        <div class="header-bg"></div>
+        
+        <div class="musical-notes">
+            <div class="note">🎵</div>
+            <div class="note">📄</div>
+            <div class="note">♪</div>
+            <div class="note">♫</div>
+            <div class="note">♩</div>
+        </div>
+        
+        <div class="header-content">
+            <h1 class="header-title">
+    
+                <span class="header-main-title">30 LOUVORES MAIS TOCADOS</span>
+                <span class="header-subtitle">(PARTITURAS PROFISSIONAIS + PLAYBACKS)</span>
+            </h1>
+            
+            <div class="header-icons">
+                <div class="icon-item">
+                    <img src="imagens/pdf.png" alt="Partituras em PDF">
+                    <span>Partituras PDF</span>
+                </div>
+                <div class="icon-item">
+                    <img src="imagens/mp3.png" alt="Playbacks MP3">
+                    <span>Playbacks MP3</span>
+                </div>
+            </div>
+
+            <div class="header-benefits">
+                <div class="benefit-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Para todos os níveis</span>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Download imediato</span>
+                </div>
+            </div>
+
+
+            <div class="whatsapp-container">
+                <a href="https://wa.me/5562981340984?text=Olá%20Mateus%20(Notaselouvores)!%20Eu%20venho%20da%20promoção%20de%2030%20partituras%20%2B%20playbacks" class="whatsapp-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> GARANTIR AGORA
+                </a>
+            </div>
+
+            <a href="#instrument-grid" class="btn-musicas-incluidas">
+                <i class="fas fa-arrow-down"></i> VER INSTRUMENTOS DISPONÍVEIS
+            </a>
+
+            <div class="security-badges">
+                <div class="badge">
+                    <i class="fas fa-lock"></i>
+                    <span>Compra 100% Segura</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Garantia de 7 Dias</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <main>
+        <section class="social-proof">
+            <div class="container">
+                <h2>Já são mais de <span class="highlight">1.200 músicos</span> satisfeitos!</h2>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"As partituras são incríveis e os playbacks de alta qualidade. Revolucionou meu ministério!"</p>
+                        <span class="testimonial-author">- Carlos, ministério de louvor</span>
+                    </div>
+                    <div class="testimonial">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Finalmente partituras bem transcritas e com playbacks que soam profissionais."</p>
+                        <span class="testimonial-author">- Ana, saxofonista</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instrument-grid" class="instrument-grid">
+            <div class="section-header">
+                <h2>Escolha o Seu Instrumento</h2>
+                <p>Partituras profissionais + Playbacks de alta qualidade</p>
+            </div>
+            
+            <div class="instruments-container">
+                <!-- Flauta -->
+                <div class="instrument-card" data-instrument="flauta">
+                    <div class="instrument-image">
+                        <img src="imagens/flauta.jpg" alt="Flauta">
+                        <div class="instrument-overlay">
+                            <span>Ver Detalhes</span>
+                        </div>
+                    </div>
+                    <h3>Flauta</h3>
+                    <p class="instrument-description">
+                        partituras + playbacks de 30 músicas
+                        <img src="imagens/mp3.png" alt="nota musical" class="inline-icon">
+                        <img src="imagens/pdf.png" alt="partitura" class="inline-icon">
+                    </p>
+                    <div class="price-container">
+                        <span class="old-price">R$69,90</span>
+                        <span class="new-price">R$39,90</span>
+                    </div>
+                    <a href="https://pay.kiwify.com.br/xMZz1hA" target="_blank" class="instrument-link">
+                        <button class="btn-buy pulse">COMPRAR AGORA</button>
+                    </a>
+                </div>
+
+                <!-- Clarinete -->
+                <div class="instrument-card" data-instrument="clarinete">
+                    <div class="instrument-image">
+                        <img src="imagens/clariente.jpg" alt="Clarinete">
+                        <div class="instrument-overlay">
+                            <span>Ver Detalhes</span>
+                        </div>
+                    </div>
+                    <h3>Clarinete</h3>
+                    <p class="instrument-description">
+                        partituras + playbacks de 30 músicas
+                        <img src="imagens/mp3.png" alt="nota musical" class="inline-icon">
+                        <img src="imagens/pdf.png" alt="partitura" class="inline-icon">
+                    </p>
+                    <div class="price-container">
+                        <span class="old-price">R$69,90</span>
+                        <span class="new-price">R$39,90</span>
+                    </div>
+                    <a href="https://pay.kiwify.com.br/DO5LLIc" target="_blank" class="instrument-link">
+                        <button class="btn-buy pulse">COMPRAR AGORA</button>
+                    </a>
+                </div>
+
+                <!-- Sax Alto -->
+                <div class="instrument-card" data-instrument="Sax Alto">
+                    <div class="instrument-image">
+                        <img src="imagens/sax alto.jpg" alt="Sax Alto">
+                        <div class="instrument-overlay">
+                            <span>Ver Detalhes</span>
+                        </div>
+                    </div>
+                    <h3>Sax Alto</h3>
+                    <p class="instrument-description">
+                        partituras + playbacks de 30 músicas
+                        <img src="imagens/mp3.png" alt="nota musical" class="inline-icon">
+                        <img src="imagens/pdf.png" alt="partitura" class="inline-icon">
+                    </p>
+                    <div class="price-container">
+                        <span class="old-price">R$69,90</span>
+                        <span class="new-price">R$39,90</span>
+                    </div>
+                    <a href="https://pay.kiwify.com.br/XG7otpU" target="_blank" class="instrument-link">
+                        <button class="btn-buy pulse">COMPRAR AGORA</button>
+                    </a>
+                </div>
+
+                <!-- Sax Tenor -->
+                <div class="instrument-card" data-instrument="Sax Tenor">
+                    <div class="instrument-image">
+                        <img src="imagens/sax tenor.jpg" alt="Sax Tenor">
+                        <div class="instrument-overlay">
+                            <span>Ver Detalhes</span>
+                        </div>
+                    </div>
+                    <h3>Sax Tenor</h3>
+                    <p class="instrument-description">
+                        partituras + playbacks de 30 músicas
+                        <img src="imagens/mp3.png" alt="nota musical" class="inline-icon">
+                        <img src="imagens/pdf.png" alt="partitura" class="inline-icon">
+                    </p>
+                    <div class="price-container">
+                        <span class="old-price">R$69,90</span>
+                        <span class="new-price">R$39,90</span>
+                    </div>
+                    <a href="https://pay.kiwify.com.br/Uz21FB7" target="_blank" class="instrument-link">
+                        <button class="btn-buy pulse">COMPRAR AGORA</button>
+                    </a>
+                </div>
+
+
+                <!-- Trompete -->
+                <div class="instrument-card" data-instrument="Trompete">
+                    <div class="instrument-image">
+                        <img src="imagens/trompete.jpg" alt="Trompete">
+                        <div class="instrument-overlay">
+                            <span>Ver Detalhes</span>
+                        </div>
+                    </div>
+                    <h3>Trompete</h3>
+                    <p class="instrument-description">
+                        partituras + playbacks de 30 músicas
+                        <img src="imagens/mp3.png" alt="nota musical" class="inline-icon">
+                        <img src="imagens/pdf.png" alt="partitura" class="inline-icon">
+                    </p>
+                    <div class="price-container">
+                        <span class="old-price">R$69,90</span>
+                        <span class="new-price">R$39,90</span>
+                    </div>
+                    <a href="https://pay.kiwify.com.br/Rbfrpln" target="_blank" class="instrument-link">
+                        <button class="btn-buy pulse">COMPRAR AGORA</button>
+                    </a>
+                </div>
+
+
+
+                <!-- Trombone -->
+                <div class="instrument-card" data-instrument="Trombone">
+                    <div class="instrument-image">
+                        <img src="imagens/trombone.jpg" alt="Trombone">
+                        <div class="instrument-overlay">
+                            <span>Ver Detalhes</span>
+                        </div>
+                    </div>
+                    <h3>Trombone</h3>
+                    <p class="instrument-description">
+                        partituras + playbacks de 30 músicas
+                        <img src="imagens/mp3.png" alt="nota musical" class="inline-icon">
+                        <img src="imagens/pdf.png" alt="partitura" class="inline-icon">
+                    </p>
+                    <div class="price-container">
+                        <span class="old-price">R$69,90</span>
+                        <span class="new-price">R$39,90</span>
+                    </div>
+                    <a href="https://pay.kiwify.com.br/e91BFJk" target="_blank" class="instrument-link">
+                        <button class="btn-buy pulse">COMPRAR AGORA</button>
+                    </a>
+                </div>
+
+
+                <!-- Violino -->
+                <div class="instrument-card" data-instrument="Violino">
+                    <div class="instrument-image">
+                        <img src="imagens/violino.jpg" alt="Violino">
+                        <div class="instrument-overlay">
+                            <span>Ver Detalhes</span>
+                        </div>
+                    </div>
+                    <h3>Violino</h3>
+                    <p class="instrument-description">
+                        partituras + playbacks de 30 músicas
+                        <img src="imagens/mp3.png" alt="nota musical" class="inline-icon">
+                        <img src="imagens/pdf.png" alt="partitura" class="inline-icon">
+                    </p>
+                    <div class="price-container">
+                        <span class="old-price">R$69,90</span>
+                        <span class="new-price">R$39,90</span>
+                    </div>
+                    <a href="https://pay.kiwify.com.br/MIthtP1" target="_blank" class="instrument-link">
+                        <button class="btn-buy pulse">COMPRAR AGORA</button>
+                    </a>
+                </div>
+
+                <!-- Viola -->
+                <div class="instrument-card" data-instrument="Viola">
+                    <div class="instrument-image">
+                        <img src="imagens/viola.jpg" alt="Viola">
+                        <div class="instrument-overlay">
+                            <span>Ver Detalhes</span>
+                        </div>
+                    </div>
+                    <h3>Viola</h3>
+                    <p class="instrument-description">
+                        partituras + playbacks de 30 músicas
+                        <img src="imagens/mp3.png" alt="nota musical" class="inline-icon">
+                        <img src="imagens/pdf.png" alt="partitura" class="inline-icon">
+                    </p>
+                    <div class="price-container">
+                        <span class="old-price">R$69,90</span>
+                        <span class="new-price">R$39,90</span>
+                    </div>
+                    <a href="https://pay.kiwify.com.br/NqKDDuA" target="_blank" class="instrument-link">
+                        <button class="btn-buy pulse">COMPRAR AGORA</button>
+                    </a>
+                </div>
+
+                <!-- Violoncelo -->
+                <div class="instrument-card" data-instrument="Violoncelo">
+                    <div class="instrument-image">
+                        <img src="imagens/violoncelo.jpg" alt="Violoncelo">
+                        <div class="instrument-overlay">
+                            <span>Ver Detalhes</span>
+                        </div>
+                    </div>
+                    <h3>Violoncelo</h3>
+                    <p class="instrument-description">
+                        partituras + playbacks de 30 músicas
+                        <img src="imagens/mp3.png" alt="nota musical" class="inline-icon">
+                        <img src="imagens/pdf.png" alt="partitura" class="inline-icon">
+                    </p>
+                    <div class="price-container">
+                        <span class="old-price">R$69,90</span>
+                        <span class="new-price">R$39,90</span>
+                    </div>
+                    <a href="https://pay.kiwify.com.br/0mGO70h" target="_blank" class="instrument-link">
+                        <button class="btn-buy pulse">COMPRAR AGORA</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-section">
+            <div class="featured-bg"></div>
+            <div class="musical-notes">
+                <div class="note">♪</div>
+                <div class="note">♫</div>
+                <div class="note">♩</div>
+                <div class="note">♬</div>
+                <div class="note">♭</div>
+            </div>
+            
+            <div class="featured-content">
+                <h2>Promoção Relâmpago</h2>
+                <p class="featured-description"> Pacote com 4 instrumentos: flauta, sax alto, trompete e violino</p>
+                
+                <div class="featured-instrument">
+                   
+                    <div class="featured-info">
+                        <h3>Super Pacote 4 em 1</h3>
+                        <p class="featured-text">Leve 4 instrumentos por um preço especial!</p>
+                        
+                        <div class="featured-price">
+                            <div class="price-comparison">
+                                <span class="original-price">De: R$99,60</span>
+                                <span class="discount">40% OFF</span>
+                            </div>
+                            <div class="final-price">Por: R$69,90</div>
+                            <div class="economy">Você economiza R$30,00</div>
+                        </div>
+                        
+                        <a href="https://pay.kiwify.com.br/35OYHCT" class="featured-btn pulse">
+                            <span>COMPRAR AGORA</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        
+                        <div class="featured-timer">
+                            <i class="fas fa-bolt"></i>
+                            <span>Oferta válida por: <strong id="featured-hours">23</strong>h <strong id="featured-minutes">59</strong>m <strong id="featured-seconds">59</strong>s</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="centered-section">
+            <div class="centered-container">
+                <div class="centered-header">
+                    <h2>PACOTE COMPLETO</h2>
+                </div>
+                <p class="centered-subtitle">Todos os 9 instrumentos em um único pacote</p>
+                
+                <p class="centered-description">
+                    Ideal para ministérios e grupos de louvor completos
+                </p>
+                
+                <div class="centered-price">
+                    <div class="price-comparison">
+                        <span class="original-price">De: R$298,80</span>
+                    </div>
+                    <div class="final-price">R$109,90</div>
+                    <div class="installments">ou 12x de R$11,37</div>
+                    <div class="economy">Economize R$188,90</div>
+                </div>
+                
+                <a href="https://pay.kiwify.com.br/DF81uN2" class="featured-btn centered-btn pulse">
+                    <span>COMPRAR PACOTE COMPLETO</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                
+                <div class="centered-guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Garantia de satisfação de 7 dias</span>
+                </div>
+                
+                <div class="centered-benefits">
+                    <div class="benefit">
+                        <i class="fas fa-check"></i>
+                        <span>Todos os 9 instrumentos</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-check"></i>
+                        <span>+ de 270 arquivos</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-check"></i>
+                        <span>Bônus exclusivos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-section" class="featured-section music-list-section">
+            <div class="featured-bg"></div>
+            <div class="featured-content">
+                <h2>30 Partituras + Bônus Exclusivos</h2>
+                
+                <div class="featured-instrument">
+                    <div class="featured-info">
+                        <h3>Lista das Músicas Incluídas</h3>
+                        
+                        <div class="music-columns">
+                            <div class="music-column">
+                                <h4>As músicas mais tocadas</h4>
+                                <ul class="featured-benefits">
+                                    <li><i class="fas fa-music"></i> 1000 Graus - Renascer Praise</li>
+                                    <li><i class="fas fa-music"></i> A Bênção - Gabriel Guedes e Nívea Soares</li>
+                                    <li><i class="fas fa-music"></i> Agnus Dei - Gabriela Rocha</li>
+                                    <li><i class="fas fa-music"></i> Além do Rio Azul - Voz da Verdade</li>
+                                    <li><i class="fas fa-music"></i> Bondade de Deus - Isaías Saad</li>
+                                    <li><i class="fas fa-music"></i> Creio Que Tu És a Cura - Gabriela Rocha</li>
+                                    <li><i class="fas fa-music"></i> Deserto - Maria Marçal</li>
+                                    <li><i class="fas fa-music"></i> É Tudo Sobre Você - Morada</li>
+                                    <li><i class="fas fa-music"></i> Espírito Santo - Fernanda Brum</li>
+                                    <li><i class="fas fa-music"></i> Eu Te Agradeço - Preto no Branco</li>
+                                    <li><i class="fas fa-music"></i> I Speak Jesus - Charity Gayle</li>
+                                    <li><i class="fas fa-music"></i> Jeová Jireh - Aline Barros</li>
+                                    <li><i class="fas fa-music"></i> Lugar Secreto - Gabriela Rocha</li>
+                                    <li><i class="fas fa-music"></i> Maranata - Avivah</li>
+                                    <li><i class="fas fa-music"></i> Me Atraiu - Gabriela Rocha</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="music-column">
+                                <h4>&nbsp;</h4>
+                                <ul class="featured-benefits">
+                                    <li><i class="fas fa-music"></i> Ninguém Explica Deus - Preto no Branco</li>
+                                    <li><i class="fas fa-music"></i> O Escudo - Voz da Verdade</li>
+                                    <li><i class="fas fa-music"></i> Oceanos - Ana Nóbrega</li>
+                                    <li><i class="fas fa-music"></i> Pode Morar Aqui - Theo Rubia</li>
+                                    <li><i class="fas fa-music"></i> Pra Sempre - Avivah</li>
+                                    <li><i class="fas fa-music"></i> Quero Conhecer Jesus - Alessandro Vilas Boas</li>
+                                    <li><i class="fas fa-music"></i> Renova-me - Aline Barros</li>
+                                    <li><i class="fas fa-music"></i> Rompendo em Fé - Comunidade da Zona Sul</li>
+                                    <li><i class="fas fa-music"></i> Santo Espírito - Renascer Praise</li>
+                                    <li><i class="fas fa-music"></i> Toda Terra - Gabriela Rocha</li>
+                                    <li><i class="fas fa-music"></i> Todavia Me Alegrarei - Samuel Messias</li>
+                                    <li><i class="fas fa-music"></i> Tu És Águas Purificadoras - Fhop Music</li>
+                                    <li><i class="fas fa-music"></i> Vitorioso És - Emi Sousa feat. André Aquino</li>
+                                    <li><i class="fas fa-music"></i> Yeshua - Fernandinho</li>
+                                    <li><i class="fas fa-music"></i> Yeshua - Fernandinho e Heloísa Rosa</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 class="bonus-title">Bônus Exclusivos</h3>
+                        <ul class="featured-benefits bonus-list">
+                            <li><i class="fas fa-gift"></i> Perto Quero Estar (Te Louvarei) - Trazendo a Arca</li>
+                            <li><i class="fas fa-gift"></i> Raridade - Anderson Freire</li>
+                            <li><i class="fas fa-gift"></i> Aclame ao Senhor - Diante do Trono</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="musical-notes">
+                <div class="note">♪</div>
+                <div class="note">♫</div>
+                <div class="note">♩</div>
+                <div class="note">♬</div>
+                <div class="note">♭</div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2>Perguntas Frequentes</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Como recebo as partituras após a compra?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Imediatamente após a confirmação do pagamento, você receberá um e-mail com o link para download de todos os arquivos. O acesso é vitalício!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>As partituras são para qual nível?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nosso material é adequado para todos os níveis, desde iniciantes até músicos avançados. As partituras incluem cifras e são totalmente editáveis.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>E se eu não gostar do material?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oferecemos garantia incondicional de 7 dias. Se você não ficar satisfeito, devolvemos 100% do seu dinheiro sem burocracia.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Posso usar em meu ministério/igreja?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! As partituras podem ser livremente utilizadas para fins pessoais e em ministérios/igrejas. Apenas não é permitida a redistribuição ou revenda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Não perca esta oportunidade única!</h2>
+                <p>Adquira já suas partituras com <strong>40% de desconto</strong> por tempo limitado</p>
+                
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span id="hours">00</span>
+                        <span>Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes">00</span>
+                        <span>Minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds">00</span>
+                        <span>Segundos</span>
+                    </div>
+                </div>
+                
+                <a href="#instrument-grid" class="btn-main pulse"> INSTRUMENTO</a>
+                
+                <div class="whatsapp-container">
+                    <a href="https://wa.me/5561983164894?text=Olá%20Cleiton%20(PARTITURANAMAO)!%20Eu%20venho%20da%20promoção%20de%2030%20partituras%20%2B%20playbacks" class="whatsapp-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> TIRE SUAS DÚVIDAS PELO WHATSAPP
+                    </a>
+                </div>
+                
+                <div class="security-badges">
+                    <div class="badge">
+                        <i class="fas fa-lock"></i>
+                        <span>Compra Segura</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Garantia de 7 Dias</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-download"></i>
+                        <span>Download Imediato</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>Notas e Louvores</h3>
+                <p>Partituras profissionais para músicos cristãos</p>
+            </div>
+            <div class="footer-contact">
+                <p><i class="fab fa-whatsapp"></i> (62) 98134-0984</p>
+                <p><i class="far fa-envelope"></i> contato@notaseLouvores.com.br</p>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 Notas e Louvores. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
