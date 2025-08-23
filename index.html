@@ -637,6 +637,60 @@
                 <div class="note">♬</div>
                 <div class="note">♭</div>
             </div>
+
+            <!-- Adicione este código antes do fechamento da seção featured-section -->
+<div class="button-container">
+    <a href="#instrument-grid" class="cta-button">Ir para os Instrumentos</a>
+</div>
+
+<style>
+    /* Estilos específicos para o botão */
+    .button-container {
+        text-align: center;
+        margin: 30px 0 20px;
+        width: 100%;
+    }
+    
+    .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        color: white;
+        padding: 15px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(37, 117, 252, 0.4);
+    }
+    
+    .cta-button:active {
+        transform: translateY(1px);
+    }
+    
+    /* Efeito de brilho no hover */
+    .cta-button::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: 0.5s;
+    }
+    
+    .cta-button:hover::after {
+        left: 100%;
+    }
+</style>
         </section>
 
         <section class="faq-section">
