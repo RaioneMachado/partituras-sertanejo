@@ -1084,6 +1084,63 @@ body {
     color: var(--accent-color);
 }
 
+/* Responsividade da seção Music List */
+@media (max-width: 1024px) {
+    .music-columns {
+        gap: 2rem;
+    }
+
+    .music-column {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .music-columns {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .music-column {
+        flex: unset;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .music-column h4 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .music-list-section {
+        padding: 3rem 1rem;
+    }
+
+    .music-columns {
+        gap: 1.5rem;
+    }
+
+    .music-column {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .music-column h4 {
+        font-size: 1.1rem;
+    }
+
+    .featured-benefits li {
+        font-size: 0.95rem;
+    }
+
+    .bonus-title {
+        font-size: 1.1rem;
+    }
+}
+
+
 /* FAQ Section */
 .faq-section {
     padding: 5rem 2rem;
