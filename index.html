@@ -810,18 +810,152 @@
         </div>
     </footer>
 
+    <!-- Notificação Flutuante de Compradores Recentes -->
+<div class="floating-purchase-notification">
+    <div class="purchase-message">
+        <span class="customer-name">Ana Silva</span> acabou de comprar 
+        <span class="product-name">Partitura de Piano</span>
+        <span class="purchase-time">há 2 minutos</span>
+    </div>
+</div>
+
+<style>
+    .floating-purchase-notification {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        max-width: 320px;
+        animation: slideIn 0.5s ease forwards;
+    }
+    
+    .purchase-message {
+        background: white;
+        padding: 12px 16px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        font-size: 0.9rem;
+        border-left: 4px solid #4CAF50;
+        position: relative;
+        transform: translateX(100%);
+        animation: slideIn 0.5s ease forwards;
+    }
+    
+    .customer-name {
+        font-weight: bold;
+        color: #2e7d32;
+    }
+    
+    .product-name {
+        font-style: italic;
+        color: #ff5722;
+    }
+    
+    .purchase-time {
+        display: block;
+        font-size: 0.7rem;
+        color: #757575;
+        margin-top: 4px;
+    }
+    
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+        .floating-purchase-notification {
+            bottom: 10px;
+            right: 10px;
+            left: 10px;
+            max-width: none;
+        }
+        
+        .purchase-message {
+            padding: 10px 14px;
+            font-size: 0.85rem;
+        }
+    }
+</style>
+
+<script>
+    // Lista de compradores (10 exemplos)
+    const purchasers = [
+        { name: "Ana Silva", product: "Partitura de Piano", time: "há 2 minutos" },
+        { name: "Carlos Oliveira", product: "Partitura de Violão", time: "há 5 minutos" },
+        { name: "Marina Santos", product: "Partitura de Saxofone", time: "há 8 minutos" },
+        { name: "João Pereira", product: "Partitura de Guitarra", time: "há 12 minutos" },
+        { name: "Fernanda Lima", product: "Partitura de Flauta", time: "há 15 minutos" },
+        { name: "Ricardo Almeida", product: "Partitura de Bateria", time: "há 20 minutos" },
+        { name: "Juliana Costa", product: "Partitura de Violino", time: "há 25 minutos" },
+        { name: "Pedro Mendes", product: "Partitura de Teclado", time: "há 30 minutos" },
+        { name: "Amanda Rodrigues", product: "Partitura de Canto", time: "há 40 minutos" },
+        { name: "Bruno Souza", product: "Partitura de Ukulele", time: "há 55 minutos" }
+    ];
+    
+    // Função para atualizar a notificação
+    function updatePurchaseNotification() {
+        const notificationElement = document.querySelector('.purchase-message');
+        const randomPurchaser = purchasers[Math.floor(Math.random() * purchasers.length)];
+        
+        // Aplicar efeito de saída
+        notificationElement.style.animation = 'slideOut 0.5s ease forwards';
+        
+        setTimeout(() => {
+            // Atualizar o conteúdo
+            notificationElement.innerHTML = `
+                <span class="customer-name">${randomPurchaser.name}</span> 
+                acabou de comprar <span class="product-name">${randomPurchaser.product}</span>
+                <span class="purchase-time">${randomPurchaser.time}</span>
+            `;
+            
+            // Aplicar efeito de entrada
+            notificationElement.style.animation = 'slideIn 0.5s ease forwards';
+        }, 500);
+    }
+    
+    // Iniciar as atualizações quando a página carregar
+    document.addEventListener('DOMContentLoaded', function() {
+        // Atualizar a cada 10 segundos
+        setInterval(updatePurchaseNotification, 10000);
+        
+        // Primeira atualização após 3 segundos
+        setTimeout(updatePurchaseNotification, 3000);
+        
+        // Opcional: fechar a notificação ao clicar
+        document.querySelector('.floating-purchase-notification').addEventListener('click', function() {
+            this.style.animation = 'slideOut 0.5s ease forwards';
+            setTimeout(() => {
+                this.style.display = 'none';
+            }, 500);
+        });
+    });
+</script>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 
     <!-- Botão Flutuante do WhatsApp -->
 <div class="whatsapp-float">
-    <a href="https://wa.me/5562981340984?text=Olá%20Mateus%20(Notas%20e%20Louvores)!%20Gostaria%20de%20saber%20mais%20sobre%20as%20partituras%20e%20playbacks." 
-       class="whatsapp-float-button" 
-       target="_blank"
-       aria-label="Fale com Mateus no WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-        <span class="float-text">Fale com Mateus</span>
-    </a>
+
     
 <!-- Balão de notificação -->
 <a href="#featured-section">
