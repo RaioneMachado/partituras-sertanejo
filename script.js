@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function iniciarContadores() {
     // Configurar a data de expiração (24 horas a partir de agora)
     const agora = new Date();
-    const expiracao = new Date(agora.getTime() + 24 * 60 * 60 * 1000);
+    const expiracao = new Date(agora.getTime() + 14 * 27 * 60 * 1000);
     
     // Atualizar todos os contadores
     atualizarContador(expiracao, 'hours', 'minutes', 'seconds');
