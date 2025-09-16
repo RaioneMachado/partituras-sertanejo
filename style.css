@@ -1891,3 +1891,39 @@ footer {
         padding: 5px 8px;
     }
 }
+
+/* Fundo escuro em todo o site */
+html, body {
+  background-color: #121212 !important; /* fundo preto/cinza escuro */
+  color: #ffffff !important; /* texto claro para contraste */
+}
+
+/* Remove TODAS as animações e transições */
+*,
+*::before,
+*::after {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+/* Congela qualquer GIF animado */
+img[src$=".gif"] {
+  animation-play-state: paused !important;
+  pointer-events: none; /* evita clique caso queira */
+}
+
+/* Remove marquee (textos rolando) */
+marquee {
+  display: none !important;
+}
+
+/* Evita rotação automática em sliders/carrosséis comuns */
+.slick-slider,
+.swiper,
+.carousel,
+.slider {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
