@@ -741,35 +741,525 @@
             </div>
         </section>
 
-        <section class="social-proof">
-            <div class="container">
-                <h2>Já são mais de <span style="color: yellow;">1.200 músicos</span> satisfeitos!</h2>
-                <div class="testimonials">
-                    <div class="testimonial">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"As partituras são incríveis e os playbacks de alta qualidade. Revolucionou meu ministério!"</p>
-                        <span class="testimonial-author">- Carlos, trompetista</span>
+ <section class="depoimentos-section">
+    <div class="container">
+        <span style="color: yellow;">
+            <h2>Já são +de 1267 combos de partituras entregues</h2>
+        </span>
+
+        
+        <div class="depoimentos-carrossel">
+            <div class="carrossel-track">
+                <!-- Depoimento 1 -->
+                <div class="depoimento-card active">
+                    <div class="image-container">
+                        <img src="imagens/depoimento 1.jpeg" alt="Depoimento Carlos Silva" class="depoimento-img">
                     </div>
-                    <div class="testimonial">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Finalmente partituras bem transcritas e com playbacks que soam profissionais."</p>
-                        <span class="testimonial-author">- Ana, saxofonista</span>
+                </div>
+                
+                <!-- Depoimento 2 -->
+                <div class="depoimento-card">
+                    <div class="image-container">
+                        <img src="imagens/depoimento 2.jpeg" alt="Depoimento Ana Costa" class="depoimento-img">
+                    </div>
+                </div>
+                
+                <!-- Depoimento 3 -->
+                <div class="depoimento-card">
+                    <div class="image-container">
+                        <img src="imagens/depoimento 3.jpeg" alt="Depoimento Mariana Santos" class="depoimento-img">
+                    </div>
+                </div>
+                
+                <!-- Depoimento 4 -->
+                <div class="depoimento-card">
+                    <div class="image-container">
+                        <img src="imagens/depoimento 4.jpeg" alt="Depoimento Ricardo Lima" class="depoimento-img">
+                    </div>
+                </div>
+                
+                <!-- Depoimento 5 -->
+                <div class="depoimento-card">
+                    <div class="image-container">
+                        <img src="imagens/depoimento 5.jpeg" alt="Depoimento João Pereira" class="depoimento-img">
+                    </div>
+                </div>
+
+                <!-- Depoimento 6 -->
+                <div class="depoimento-card">
+                    <div class="image-container">
+                        <img src="imagens/depoimento 6.jpeg" alt="Depoimento João Pereira" class="depoimento-img">
                     </div>
                 </div>
             </div>
-        </section>
+            
+            <!-- Indicadores -->
+            <div class="carrossel-indicators">
+                <button class="indicator active" data-slide="0"></button>
+                <button class="indicator" data-slide="1"></button>
+                <button class="indicator" data-slide="2"></button>
+                <button class="indicator" data-slide="3"></button>
+                <button class="indicator" data-slide="4"></button>
+                <button class="indicator" data-slide="5"></button>
+            </div>
+            
+            <!-- Botões de navegação -->
+            <button class="carrossel-btn prev-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carrossel-btn next-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<style>
+    .depoimentos-section {
+        padding: 5rem 2rem;
+        background: var(--dark-bg);
+        text-align: center;
+    }
+    
+    .depoimentos-section h2 {
+        font-family: var(--font-title);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .depoimentos-carrossel {
+        position: relative;
+        max-width: 400px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    
+    .carrossel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .depoimento-card {
+        flex: 0 0 100%;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.5s ease-in-out;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .depoimento-card.active {
+        opacity: 1;
+        transform: translateX(0);
+        position: relative;
+    }
+    
+    .image-container {
+        width: 100%;
+        max-width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .depoimento-img {
+        width: 100%;
+        max-height: 500px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .carrossel-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 2rem;
+    }
+    
+    .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: none;
+        background: var(--text-muted);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .indicator.active {
+        background: var(--secondary-color);
+        transform: scale(1.2);
+    }
+    
+    .carrossel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 170, 255, 0.8);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+    
+    .carrossel-btn:hover {
+        background: var(--secondary-color);
+        transform: translateY(-50%) scale(1.1);
+    }
+    
+    .prev-btn {
+        left: 10px;
+    }
+    
+    .next-btn {
+        right: 10px;
+    }
+    
+    /* Mobile */
+    @media (max-width: 768px) {
+        .depoimentos-section {
+            padding: 3rem 1rem;
+        }
+        
+        .depoimentos-section h2 {
+            font-size: 2rem;
+        }
+        
+        .depoimentos-carrossel {
+            max-width: 320px;
+        }
+        
+        .image-container {
+            max-width: 280px;
+        }
+        
+        .depoimento-img {
+            max-height: 450px;
+        }
+        
+        .carrossel-btn {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+        }
+        
+        .prev-btn {
+            left: 5px;
+        }
+        
+        .next-btn {
+            right: 5px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .depoimentos-carrossel {
+            max-width: 280px;
+        }
+        
+        .image-container {
+            max-width: 250px;
+        }
+        
+        .depoimento-img {
+            max-height: 400px;
+        }
+        
+        .carrossel-btn {
+            width: 35px;
+            height: 35px;
+            font-size: 0.9rem;
+        }
+        
+        .prev-btn {
+            left: 0;
+        }
+        
+        .next-btn {
+            right: 0;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .depoimentos-carrossel {
+            max-width: 250px;
+        }
+        
+        .image-container {
+            max-width: 220px;
+        }
+        
+        .depoimento-img {
+            max-height: 350px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const track = document.querySelector('.carrossel-track');
+        const cards = document.querySelectorAll('.depoimento-card');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        
+        let currentSlide = 0;
+        let autoSlideInterval;
+        
+        // Função para mostrar slide
+        function showSlide(index) {
+            // Remove classe active de todos
+            cards.forEach(card => card.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Adiciona classe active no slide atual
+            cards[index].classList.add('active');
+            indicators[index].classList.add('active');
+            
+            currentSlide = index;
+        }
+        
+        // Próximo slide
+        function nextSlide() {
+            let nextIndex = currentSlide + 1;
+            if (nextIndex >= cards.length) {
+                nextIndex = 0;
+            }
+            showSlide(nextIndex);
+        }
+        
+        // Slide anterior
+        function prevSlide() {
+            let prevIndex = currentSlide - 1;
+            if (prevIndex < 0) {
+                prevIndex = cards.length - 1;
+            }
+            showSlide(prevIndex);
+        }
+        
+        // Event listeners para botões
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        // Event listeners para indicadores
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+                resetAutoSlide();
+            });
+        });
+        
+        // Auto slide
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000); // Muda a cada 5 segundos
+        }
+        
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+        
+        // Iniciar auto slide
+        startAutoSlide();
+        
+        // Pausar auto slide no hover
+        const carrossel = document.querySelector('.depoimentos-carrossel');
+        carrossel.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+        
+        carrossel.addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+        
+        // Touch events para mobile
+        let startX = 0;
+        let endX = 0;
+        
+        carrossel.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        carrossel.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > 50) { // Limite mínimo para considerar swipe
+                if (diff > 0) {
+                    nextSlide(); // Swipe para esquerda
+                } else {
+                    prevSlide(); // Swipe para direita
+                }
+                resetAutoSlide();
+            }
+        }
+    });
+</script>
+
+<section class="garantia-simples-section">
+    <div class="container">
+        <div class="garantia-simples-content">
+            <div class="image-wrapper">
+                <img src="imagens/garantia.png" alt="Garantia de 7 Dias" class="garantia-simples-img">
+                <div class="gold-glow"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .garantia-simples-section {
+        padding: 4rem 2rem;
+        background: var(--card-bg);
+        text-align: center;
+        position: relative;
+    }
+    
+    .garantia-simples-content {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .image-wrapper {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .garantia-simples-img {
+        width: 300px;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 2;
+    }
+    
+    .gold-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 350px;
+        height: 350px;
+        background: radial-gradient(
+            circle,
+            rgba(255, 215, 0, 0.4) 0%,
+            rgba(255, 215, 0, 0.2) 40%,
+            rgba(255, 215, 0, 0.1) 70%,
+            transparent 100%
+        );
+        border-radius: 50%;
+        filter: blur(20px);
+        z-index: 1;
+        animation: pulse-gold 3s ease-in-out infinite;
+    }
+    
+    @keyframes pulse-gold {
+        0%, 100% {
+            opacity: 0.6;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+            opacity: 0.8;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+    }
+    
+    /* Efeito extra de brilho */
+    .image-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+            circle,
+            rgba(255, 215, 0, 0.2) 0%,
+            rgba(255, 215, 0, 0.1) 30%,
+            transparent 70%
+        );
+        border-radius: 50%;
+        z-index: 1;
+        animation: rotate-glow 6s linear infinite;
+    }
+    
+    @keyframes rotate-glow {
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+    
+    /* Mobile */
+    @media (max-width: 768px) {
+        .garantia-simples-section {
+            padding: 3rem 1rem;
+        }
+        
+        .garantia-simples-img {
+            width: 280px;
+        }
+        
+        .gold-glow {
+            width: 320px;
+            height: 320px;
+        }
+        
+        .image-wrapper::before {
+            width: 360px;
+            height: 360px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .garantia-simples-img {
+            width: 250px;
+        }
+        
+        .gold-glow {
+            width: 290px;
+            height: 290px;
+        }
+        
+        .image-wrapper::before {
+            width: 330px;
+            height: 330px;
+        }
+    }
+</style>
 
         <section id="featured-section" class="featured-section music-list-section">
             <div class="featured-bg"></div>
@@ -893,34 +1383,7 @@
             </div>
         </section>
 
-        <section class="cta-section">
-            <div class="cta-content">
-                <h2>Não perca esta oportunidade única!</h2>
-                
-                <a href="#instrument-grid" class="btn-main pulse"> INSTRUMENTO</a>
-                
-                <div class="whatsapp-container">
-                    <a href="https://wa.me/5562981340984?text=Olá%20Mateus%20(NOTAS E LOUVORES)!%20Eu%20venho%20da%20promoção%20de%2030%20partituras%20%2B%20playbacks" class="whatsapp-button" target="_blank">
-                        <i class="fab fa-whatsapp"></i> TIRE SUAS DÚVIDAS PELO WHATSAPP
-                    </a>
-                </div>
-                
-                <div class="security-badges">
-                    <div class="badge">
-                        <i class="fas fa-lock"></i>
-                        <span>Compra Segura</span>
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Garantia de 7 Dias</span>
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-download"></i>
-                        <span>Download Imediato</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+     
     </main>
 
     <footer>
