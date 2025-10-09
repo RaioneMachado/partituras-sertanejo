@@ -23,16 +23,6 @@
     </noscript>
     <!-- End Meta Pixel Code -->
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17633167767"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17633167767');
-</script>
-
     <script
   src="https://cdn.utmify.com.br/scripts/utms/latest.js"
   data-utmify-prevent-xcod-sck
@@ -43,36 +33,292 @@
 
 </head>
 
-<body>
-    <!-- resto do seu conteúdo -->
+<body class="antialiased relative bg-glow">
+    <!-- Botão Flutuante para Ver Músicas -->
+    <div class="whatsapp-float">
+    </div>
+    
+<!-- CONTADOR REGRESSIVO STICKY (começa em 10:59) -->
+<div id="countdownSticky" class="countdown-fixed" data-aos="zoom-in">
+    <div class="countdown-container">
+        <div class="text-left">
+            <p class="countdown-subtitle">oferta Acabando</p>
+            <div id="cdDisplay" class="countdown-display">10:59</div>
+            <p class="countdown-text">acabou o tempo, acabou o preço.</p>
+        </div>
+        <a href="#instrument-grid" class="btn-brand shake-hard">
+            ESCOLHER INSTRUMENTO
+        </a>
+        <!-- botão fechar -->
+        <button id="cdClose" aria-label="Fechar contador" class="close-button">
+            ×
+        </button>
+    </div>
+</div>
 
+    <style>
+        /* Fixa na tela (canto inferior direito) */
+        .countdown-fixed {
+            position: fixed; 
+            right: 16px; 
+            bottom: 16px; 
+            z-index: 9999; 
+            max-width: 92vw;
+        }
+        
+        @media (max-width: 640px) {
+            .countdown-fixed {
+                left: 12px; 
+                right: 12px; 
+                bottom: 12px;
+            }
+        }
+        
+        /* Container do contador */
+        .countdown-container {
+            background: rgba(14, 20, 26, 0.72);
+            border: 2px solid #00eaff;
+            border-radius: 16px;
+            padding: 16px 48px 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 0 18px #00ffff, 0 0 36px #1fb6ff;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        
+        @media (max-width: 640px) {
+            .countdown-container {
+                flex-direction: column;
+                gap: 12px;
+                padding: 16px 40px 16px 16px;
+            }
+        }
+        
+        /* Texto do contador */
+        .text-left {
+            text-align: left;
+        }
+        
+        .countdown-subtitle {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgb(103, 232, 249);
+            font-weight: 900;
+            margin: 0;
+        }
+        
+        .countdown-display {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            color: rgb(103, 232, 249);
+            text-shadow: 0 0 18px rgba(0, 238, 255, 0.6);
+            margin: 4px 0;
+        }
+        
+        @media (min-width: 768px) {
+            .countdown-display {
+                font-size: 36px;
+            }
+        }
+        
+        .countdown-text {
+            font-size: 11px;
+            color: rgb(156, 163, 175);
+            line-height: 1.25;
+            margin: 0;
+        }
+        
+        /* Botão de compra */
+        .btn-brand {
+            background: linear-gradient(45deg, #6a11cb, #00AAFF);
+            color: white;
+            font-weight: 800;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-brand:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+        }
+        
+        /* Botão fechar */
+        .close-button {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            color: rgba(165, 243, 252, 0.7);
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            line-height: 1;
+            padding: 4px;
+        }
+        
+        .close-button:hover {
+            color: white;
+        }
+        
+        /* Animação shake */
+        @keyframes shake {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); } 
+            20% { transform: translate(-1px, 1px) rotate(-0.5deg); } 
+            40% { transform: translate(1px, -1px) rotate(0.6deg); } 
+            60% { transform: translate(-1px, 1px) rotate(-0.6deg); } 
+            80% { transform: translate(1px, 0) rotate(0.4deg); }
+        }
+        
+        .shake-hard {
+            animation: shake 0.6s infinite;
+        }
+        
+        /* Estado expirado */
+        .expired {
+            color: #ff3b1f !important;
+            text-shadow: 0 0 18px rgba(255, 59, 31, 0.75);
+        }
+        
+        .disabled {
+            opacity: 0.55; 
+            pointer-events: none; 
+            filter: grayscale(40%);
+        }
+        
+        /* BOTÃO FLUTUANTE PARA VER MÚSICAS - CORRIGIDO */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 90px;
+            right: 25px;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+        
+        .notification-bubble {
+            background: linear-gradient(135deg, #ff3366, #ff6b6b);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            animation: bounce 3s infinite;
+            box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3);
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .notification-bubble:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 51, 102, 0.5);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-5px);
+            }
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 80px;
+                right: 15px;
+            }
+            
+            .notification-bubble {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .whatsapp-float {
+                bottom: 70px;
+                right: 10px;
+            }
+            
+            .notification-bubble {
+                font-size: 10px;
+                padding: 5px 8px;
+            }
+        }
+    </style>
+
+    <script>
+        // JavaScript para o contador regressivo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos do contador sticky
+            const countdownSticky = document.getElementById('countdownSticky');
+            const cdDisplay = document.getElementById('cdDisplay');
+            const cdClose = document.getElementById('cdClose');
+            
+            // Tempo inicial: 10 minutos e 59 segundos
+            let timeLeft = 10 * 60 + 59;
+            
+            // Função para formatar o tempo
+            function formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                const remainingSeconds = seconds % 60;
+                return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+            }
+            
+            // Função para atualizar o contador
+            function updateCountdown() {
+                cdDisplay.textContent = formatTime(timeLeft);
+                
+                // Quando o tempo acabar
+                if (timeLeft <= 0) {
+                    cdDisplay.textContent = '00:00';
+                    cdDisplay.classList.add('expired');
+                    clearInterval(countdownInterval);
+                    
+                    // Desabilita o botão de compra
+                    const buyButton = countdownSticky.querySelector('.btn-brand');
+                    if (buyButton) {
+                        buyButton.classList.add('disabled');
+                        buyButton.style.pointerEvents = 'none';
+                        buyButton.style.opacity = '0.6';
+                    }
+                } else {
+                    timeLeft--;
+                }
+            }
+            
+            // Iniciar o contador
+            const countdownInterval = setInterval(updateCountdown, 1000);
+            
+            // Fechar o contador
+            cdClose.addEventListener('click', function() {
+                countdownSticky.style.display = 'none';
+                clearInterval(countdownInterval);
+            });
+        });
+    </script>
     <div class="light-effect"></div>
     <div class="light-effect light-effect-2"></div>
     <div class="particles-container" id="particles-js"></div>
     
-    <!-- Modal de Oferta Especial -->
-        <section class="cta-section">
-            <div class="cta-content">
-            
-                <span class="header-main-title">PROMOÇÃO APENAS HOJE 08/10</span> 
-                
-                <p><span style="color: beige;">Adquira já suas partituras com </span><strong><span style="color: beige;">50% de desconto</span></strong><span style="color: beige;"> somente HOJE</span></p>
-                
-                <div class="countdown">
-                    <div class="countdown-item">
-                        <span id="hours">00</span>
-                        <span>Horas</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="minutes">00</span>
-                        <span>Minutos</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="seconds">00</span>
-                        <span>Segundos</span>
-                    </div>
-                </div>
-    
+
+
     <div class="modal-overlay" id="modalOferta">
         <div class="modal-container">
             <div class="modal-header">
@@ -103,57 +349,47 @@
         </div>
     </div>
 
-<header>
-    <div class="header-section">
-        <div class="header-bg"></div>
-        
-        <div class="musical-notes">
-            <div class="note">🎵</div>
-            <div class="note">📄</div>
-            <div class="note">♪</div>
-            <div class="note">♫</div>
-            <div class="note">♩</div>
-        </div>
-        
-        <div class="header-content">
-            <h1 class="header-title">
-           
-                <span class="header-main-title">COMPRE AGORA OS MELHORES 30 LOUVORES MAIS TOCADOS</span>
-                <span class="header-subtitle">(PARTITURAS PROFISSIONAIS + PLAYBACKS)</span>
-            </h1>
+    <header>
+        <div class="header-section">
+            <div class="header-bg"></div>
             
-            <div class="header-icons">
-                <div class="icon-item">
-                    <img src="imagens/pdf.png" alt="Partituras em PDF">
-                    <span>Partituras PDF</span>
-                </div>
-                <div class="icon-item">
-                    <img src="imagens/mp3.png" alt="Playbacks MP3">
-                    <span>Playbacks MP3</span>
-                </div>
+            <div class="musical-notes">
+                <div class="note">🎵</div>
+                <div class="note">📄</div>
+                <div class="note">♪</div>
+                <div class="note">♫</div>
+                <div class="note">♩</div>
             </div>
+            
+            <div class="header-content">
+                <h1 class="header-title">
+                    <span class="header-main-title">OS MELHORES 30 LOUVORES MAIS TOCADOS</span>
+                    <span class="header-subtitle">(PARTITURAS PROFISSIONAIS + PLAYBACKS)</span>
+                </h1>
+                
+                <div class="header-icons">
+                    <div class="icon-item">
+                        <img src="imagens/pdf.png" alt="Partituras em PDF">
+                        <span>Partituras PDF</span>
+                    </div>
+                    <div class="icon-item">
+                        <img src="imagens/mp3.png" alt="Playbacks MP3">
+                        <span>Playbacks MP3</span>
+                    </div>
+                </div>
 
 
-
-            <a href="#instrument-grid" class="btn-musicas-incluidas">
-                <i class="fas fa-arrow-down"></i> VER INSTRUMENTOS DISPONÍVEIS
-            </a>
-            <a href="#featured-section" class="btn-musicas">
-    <i class="fas fa-music"></i> VER MÚSICAS INCLUÍDAS
-</a>
-
+                <a href="#featured-section" class="btn-musicas">
+                    <i class="fas fa-music"></i> VER MÚSICAS INCLUÍDAS
+                </a>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
+    
     <main>
-
-
-        
-
         <section id="instrument-grid" class="instrument-grid">
             <div class="section-header">
- 
-                <h2>(RESTAM APENAS 48 DOWNLOAD DISPONÍVEIS NA PROMOÇÃO) </h2>
+                <h2>(TEMPO DE PROMOÇÃO ACABANDO) </h2>
                 <p>Partituras profissionais + Playbacks de alta qualidade</p>
             </div>
             
@@ -162,7 +398,6 @@
                 <div class="instrument-card" data-instrument="flauta">
                     <div class="instrument-image">
                         <img src="imagens/flauta.jpg" alt="Flauta">
-    
                     </div>
                     <h3>Flauta</h3>
                     <p class="instrument-description">
@@ -203,7 +438,6 @@
                 <div class="instrument-card" data-instrument="Sax Alto">
                     <div class="instrument-image">
                         <img src="imagens/sax alto.jpg" alt="Sax Alto">
-
                     </div>
                     <h3>Sax Alto</h3>
                     <p class="instrument-description">
@@ -224,7 +458,6 @@
                 <div class="instrument-card" data-instrument="Sax Tenor">
                     <div class="instrument-image">
                         <img src="imagens/sax tenor.jpg" alt="Sax Tenor">
-
                     </div>
                     <h3>Sax Tenor</h3>
                     <p class="instrument-description">
@@ -241,12 +474,10 @@
                     </a>
                 </div>
 
-
                 <!-- Trompete -->
                 <div class="instrument-card" data-instrument="Trompete">
                     <div class="instrument-image">
                         <img src="imagens/trompete.jpg" alt="Trompete">
-  
                     </div>
                     <h3>Trompete</h3>
                     <p class="instrument-description">
@@ -263,13 +494,10 @@
                     </a>
                 </div>
 
-
-
                 <!-- Trombone -->
                 <div class="instrument-card" data-instrument="Trombone">
                     <div class="instrument-image">
                         <img src="imagens/trombone.jpg" alt="Trombone">
-
                     </div>
                     <h3>Trombone</h3>
                     <p class="instrument-description">
@@ -286,12 +514,10 @@
                     </a>
                 </div>
 
-
                 <!-- Violino -->
                 <div class="instrument-card" data-instrument="Violino">
                     <div class="instrument-image">
                         <img src="imagens/violino.jpg" alt="Violino">
-  
                     </div>
                     <h3>Violino</h3>
                     <p class="instrument-description">
@@ -312,7 +538,6 @@
                 <div class="instrument-card" data-instrument="Viola">
                     <div class="instrument-image">
                         <img src="imagens/viola.jpg" alt="Viola">
-   
                     </div>
                     <h3>Viola</h3>
                     <p class="instrument-description">
@@ -333,7 +558,6 @@
                 <div class="instrument-card" data-instrument="Violoncelo">
                     <div class="instrument-image">
                         <img src="imagens/violoncelo.jpg" alt="Violoncelo">
-    
                     </div>
                     <h3>Violoncelo</h3>
                     <p class="instrument-description">
@@ -350,11 +574,10 @@
                     </a>
                 </div>
 
-                                <!-- teclado -->
+                <!-- teclado -->
                 <div class="instrument-card" data-instrument="teclado">
                     <div class="instrument-image">
                         <img src="imagens/teclado.jpg" alt="teclado">
-           
                     </div>
                     <h3>Teclado</h3>
                     <p class="instrument-description">
@@ -374,7 +597,6 @@
                 <div class="instrument-card" data-instrument="piano">
                     <div class="instrument-image">
                         <img src="imagens/piano.jpg" alt="piano">
-       
                     </div>
                     <h3>Piano</h3>
                     <p class="instrument-description">
@@ -394,7 +616,6 @@
                 <div class="instrument-card" data-instrument="violão">
                     <div class="instrument-image">
                         <img src="imagens/violão.jpg" alt="violão">
-    
                     </div>
                     <h3>Violão</h3>
                     <p class="instrument-description">
@@ -414,7 +635,6 @@
                 <div class="instrument-card" data-instrument="Sax Soprano">
                     <div class="instrument-image">
                         <img src="imagens/sox soprano.jpg" alt="Sax Soprano">
-
                     </div>
                     <h3>Sax Soprano</h3>
                     <p class="instrument-description">
@@ -429,8 +649,6 @@
                         <button class="btn-buy pulse">COMPRAR AGORA</button>
                     </a>
                 </div>
-
-
             </div>
         </section>
 
@@ -449,7 +667,6 @@
                 <p class="featured-description"> Pacote com 4 instrumentos: flauta, sax alto, trompete e violino</p>
                 
                 <div class="featured-instrument">
-                   
                     <div class="featured-info">
                         <h3>Super Pacote 4 em 1</h3>
                         <p class="featured-text">Leve 4 instrumentos por um preço especial!</p>
@@ -524,7 +741,7 @@
             </div>
         </section>
 
-                <section class="social-proof">
+        <section class="social-proof">
             <div class="container">
                 <h2>Já são mais de <span class="highlight">1.200 músicos</span> satisfeitos!</h2>
                 <div class="testimonials">
@@ -625,59 +842,9 @@
                 <div class="note">♭</div>
             </div>
 
-            <!-- Adicione este código antes do fechamento da seção featured-section -->
-<div class="button-container">
-    <a href="#instrument-grid" class="cta-button">Ir para os Instrumentos</a>
-</div>
-
-<style>
-    /* Estilos específicos para o botão */
-    .button-container {
-        text-align: center;
-        margin: 30px 0 20px;
-        width: 100%;
-    }
-    
-    .cta-button {
-        display: inline-block;
-        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-        color: white;
-        padding: 15px 35px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .cta-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(37, 117, 252, 0.4);
-    }
-    
-    .cta-button:active {
-        transform: translateY(1px);
-    }
-    
-    /* Efeito de brilho no hover */
-    .cta-button::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: 0.5s;
-    }
-    
-    .cta-button:hover::after {
-        left: 100%;
-    }
-</style>
+            <div class="button-container">
+                <a href="#instrument-grid" class="cta-button">Ir para os Instrumentos</a>
+            </div>
         </section>
 
         <section class="faq-section">
@@ -729,7 +896,6 @@
         <section class="cta-section">
             <div class="cta-content">
                 <h2>Não perca esta oportunidade única!</h2>
-
                 
                 <a href="#instrument-grid" class="btn-main pulse"> INSTRUMENTO</a>
                 
@@ -755,7 +921,6 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer>
@@ -774,162 +939,8 @@
         </div>
     </footer>
 
-    <!-- Notificação Flutuante de Compradores Recentes -->
-<div class="floating-purchase-notification">
-    <div class="purchase-message">
-        <span class="customer-name">Ana Silva</span> acabou de comprar 
-        <span class="product-name">Partitura de Piano</span>
-        <span class="purchase-time">há 2 minutos</span>
-    </div>
-</div>
-
-<style>
-    .floating-purchase-notification {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 1000;
-        max-width: 320px;
-        animation: slideIn 0.5s ease forwards;
-    }
-    
-    .purchase-message {
-        background: white;
-        padding: 12px 16px;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-        font-size: 0.9rem;
-        border-left: 4px solid #4CAF50;
-        position: relative;
-        transform: translateX(100%);
-        animation: slideIn 0.5s ease forwards;
-    }
-    
-    .customer-name {
-        font-weight: bold;
-        color: #2e7d32;
-    }
-    
-    .product-name {
-        font-style: italic;
-        color: #ff5722;
-    }
-    
-    .purchase-time {
-        display: block;
-        font-size: 0.7rem;
-        color: #757575;
-        margin-top: 4px;
-    }
-    
-    @keyframes slideIn {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-    
-    @keyframes slideOut {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-    }
-    
-    /* Responsividade */
-    @media (max-width: 768px) {
-        .floating-purchase-notification {
-            bottom: 10px;
-            right: 10px;
-            left: 10px;
-            max-width: none;
-        }
-        
-        .purchase-message {
-            padding: 10px 14px;
-            font-size: 0.85rem;
-        }
-    }
-</style>
-
-<script>
-    // Lista de compradores (10 exemplos)
-    const purchasers = [
-        { name: "Ana Silva", product: "Partitura de Piano", time: "há 2 minutos" },
-        { name: "Carlos Oliveira", product: "Partitura de Violão", time: "há 5 minutos" },
-        { name: "Marina Santos", product: "Partitura de Saxofone", time: "há 8 minutos" },
-        { name: "João Pereira", product: "Partitura de Guitarra", time: "há 12 minutos" },
-        { name: "Fernanda Lima", product: "Partitura de Flauta", time: "há 15 minutos" },
-        { name: "Ricardo Almeida", product: "Partitura de Bateria", time: "há 20 minutos" },
-        { name: "Juliana Costa", product: "Partitura de Violino", time: "há 25 minutos" },
-        { name: "Pedro Mendes", product: "Partitura de Teclado", time: "há 30 minutos" },
-        { name: "Amanda Rodrigues", product: "Partitura de Canto", time: "há 40 minutos" },
-        { name: "Bruno Souza", product: "Partitura de Ukulele", time: "há 55 minutos" }
-    ];
-    
-    // Função para atualizar a notificação
-    function updatePurchaseNotification() {
-        const notificationElement = document.querySelector('.purchase-message');
-        const randomPurchaser = purchasers[Math.floor(Math.random() * purchasers.length)];
-        
-        // Aplicar efeito de saída
-        notificationElement.style.animation = 'slideOut 0.5s ease forwards';
-        
-        setTimeout(() => {
-            // Atualizar o conteúdo
-            notificationElement.innerHTML = `
-                <span class="customer-name">${randomPurchaser.name}</span> 
-                acabou de comprar <span class="product-name">${randomPurchaser.product}</span>
-                <span class="purchase-time">${randomPurchaser.time}</span>
-            `;
-            
-            // Aplicar efeito de entrada
-            notificationElement.style.animation = 'slideIn 0.5s ease forwards';
-        }, 500);
-    }
-    
-    // Iniciar as atualizações quando a página carregar
-    document.addEventListener('DOMContentLoaded', function() {
-        // Atualizar a cada 10 segundos
-        setInterval(updatePurchaseNotification, 10000);
-        
-        // Primeira atualização após 3 segundos
-        setTimeout(updatePurchaseNotification, 3000);
-        
-        // Opcional: fechar a notificação ao clicar
-        document.querySelector('.floating-purchase-notification').addEventListener('click', function() {
-            this.style.animation = 'slideOut 0.5s ease forwards';
-            setTimeout(() => {
-                this.style.display = 'none';
-            }, 500);
-        });
-    });
-</script>
-
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
-
-    <!-- Botão Flutuante do WhatsApp -->
-<div class="whatsapp-float">
-
-    
-<!-- Balão de notificação -->
-<a href="#featured-section">
-    <div class="notification-bubble">
-        <span>🎵 Ver músicas!</span>
-    </div>
-</a>
-
-</div>
-
 
 
 </body>

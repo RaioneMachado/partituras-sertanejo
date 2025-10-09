@@ -2,12 +2,12 @@
     --primary-color: #6a11cb;
     --secondary-color: #00AAFF;
     --accent-color: #ff3366;
-    --dark-bg: #0f172a;
-    --darker-bg: #0a0e1a;
+    --dark-bg: #0a0a0a;
+    --darker-bg: #050505;
     --text-color: #f8fafc;
     --text-muted: #94a3b8;
-    --card-bg: #1e293b;
-    --card-hover: #2d3748;
+    --card-bg: #121212;
+    --card-hover: #1a1a1a;
     --success-color: #10b981;
     --font-title: 'Montserrat', sans-serif;
     --font-body: 'Roboto', sans-serif;
@@ -21,7 +21,7 @@
 
 body {
     font-family: var(--font-body);
-    background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+    background: var(--darker-bg);
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
@@ -80,6 +80,7 @@ body {
     justify-content: center;
     overflow: hidden;
     padding: 1.5rem 1rem;
+    background: var(--dark-bg);
 }
 
 .header-bg {
@@ -573,12 +574,13 @@ body {
         }
     }
 }
+
 /* Social Proof - Versão Otimizada */
 .social-proof {
     padding: 3rem 1rem;
-    background: rgba(0,0,0,0.1); /* Reduzida opacidade para melhor desempenho */
+    background: var(--dark-bg);
     text-align: center;
-    will-change: transform; /* Prepara para animações suaves */
+    will-change: transform;
 }
 
 .social-proof h2 {
@@ -604,9 +606,9 @@ body {
     border-radius: 8px;
     max-width: 320px;
     text-align: left;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Sombra mais leve */
-    transform: translateZ(0); /* Aceleração GPU */
-    backface-visibility: hidden; /* Melhora a renderização */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .stars {
@@ -636,10 +638,12 @@ body {
         max-width: 100%;
     }
 }
+
 /* Instrument Grid - Versão Otimizada */
 .instrument-grid {
     padding: 3rem 1rem;
-    transform: translateZ(0); /* Aceleração por hardware */
+    transform: translateZ(0);
+    background: var(--dark-bg);
 }
 
 .section-header {
@@ -669,8 +673,8 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     position: relative;
-    transform: translateZ(0); /* Melhora performance */
-    will-change: transform, box-shadow; /* Otimização para animações */
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
 }
 
 .instrument-card:hover {
@@ -689,7 +693,7 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease-out;
-    transform: translateZ(0); /* Aceleração por hardware */
+    transform: translateZ(0);
 }
 
 .instrument-card:hover .instrument-image img {
@@ -708,7 +712,7 @@ body {
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-    pointer-events: none; /* Melhora performance */
+    pointer-events: none;
 }
 
 .instrument-card:hover .instrument-overlay {
@@ -900,11 +904,13 @@ body {
         transform: none !important;
     }
 }
+
 /* Featured Section - Versão Otimizada */
 .featured-section {
     position: relative;
     padding: 4rem 1.5rem;
     overflow: hidden;
+    background: var(--dark-bg);
 }
 
 .featured-content {
@@ -1116,9 +1122,11 @@ body {
         gap: 1rem;
     }
 }
+
 /* Music List Section */
 .music-list-section {
     padding: 5rem 2rem;
+    background: var(--dark-bg);
 }
 
 .music-columns {
@@ -1231,7 +1239,7 @@ body {
 /* FAQ Section */
 .faq-section {
     padding: 5rem 2rem;
-    background: rgba(0,0,0,0.2);
+    background: var(--dark-bg);
 }
 
 .faq-section h2 {
@@ -1804,18 +1812,6 @@ footer {
     transform: translateX(0);
 }
 
-.notification-bubble {
-    background: linear-gradient(135deg, #ff3366, #ff6b6b);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    animation: bounce 3s infinite;
-    box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3);
-    cursor: pointer;
-}
-
 @keyframes pulse-float {
     0%, 100% {
         transform: scale(1);
@@ -1824,18 +1820,6 @@ footer {
     50% {
         transform: scale(1.05);
         box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
-    }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-5px);
-    }
-    60% {
-        transform: translateY(-3px);
     }
 }
 
@@ -1860,11 +1844,6 @@ footer {
         padding: 6px 12px;
         right: 65px;
     }
-    
-    .notification-bubble {
-        font-size: 11px;
-        padding: 6px 10px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1885,17 +1864,12 @@ footer {
     .float-text {
         display: none;
     }
-    
-    .notification-bubble {
-        font-size: 10px;
-        padding: 5px 8px;
-    }
 }
 
 /* Fundo escuro em todo o site */
 html, body {
-  background-color: #121212 !important; /* fundo preto/cinza escuro */
-  color: #ffffff !important; /* texto claro para contraste */
+  background-color: #121212 !important;
+  color: #ffffff !important;
 }
 
 /* Remove TODAS as animações e transições */
@@ -1910,7 +1884,7 @@ html, body {
 /* Congela qualquer GIF animado */
 img[src$=".gif"] {
   animation-play-state: paused !important;
-  pointer-events: none; /* evita clique caso queira */
+  pointer-events: none;
 }
 
 /* Remove marquee (textos rolando) */
@@ -1927,6 +1901,7 @@ marquee {
   transition: none !important;
   transform: none !important;
 }
+
 .btn-musicas {
     display: inline-block;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -1979,5 +1954,52 @@ marquee {
 }
 
 .btn-musicas:hover::before {
+    left: 100%;
+}
+
+/* Estilos específicos para o botão */
+.button-container {
+    text-align: center;
+    margin: 30px 0 20px;
+    width: 100%;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 117, 252, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(1px);
+}
+
+/* Efeito de brilho no hover */
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.cta-button:hover::after {
     left: 100%;
 }
